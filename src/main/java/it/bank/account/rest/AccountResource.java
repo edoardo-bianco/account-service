@@ -20,8 +20,8 @@ public class AccountResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Iterable<Account> allAccount(){
-        return accountService.viewAccountList();
+    public Response allAccount(){
+        return Response.ok(accountService.viewAccountList()).build();
 
     }
 
