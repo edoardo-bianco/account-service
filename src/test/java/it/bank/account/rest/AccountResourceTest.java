@@ -2,11 +2,13 @@ package it.bank.account.rest;
 
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.response.Response;
+import it.bank.account.domain.enumerator.AccountStatus;
 import it.bank.account.domain.vo.Account;
 import org.junit.jupiter.api.Test;
 
 import javax.enterprise.inject.Stereotype;
 
+import java.math.BigDecimal;
 import java.util.Collection;
 
 import static io.restassured.RestAssured.given;
@@ -33,6 +35,22 @@ public class AccountResourceTest {
         Collection<Account> accounts = result.jsonPath().getList("$");
         assertThat(accounts, is(not(empty())));
         assertThat(accounts, hasSize(3));
+    }
+
+    @Test
+    void testGetAccount(){
+        Account account =
+                given()
+                .when().get("/accounts/{accountNumber}", 123456789 )
+                .then()
+                .statusCode(200)
+                .extract()
+                .as(Account.class);
+
+        assertThat(account.getAccountNumber(), equalTo(123456789L));
+        assertThat(account.getCustomerName(), equalTo("George Baird"));
+        assertThat(account.getAccountStatus(), equalTo(AccountStatus.OPEN));
+        assertThat(account.getBalance(), equalTo(new BigDecimal("354.23")));
     }
 
 

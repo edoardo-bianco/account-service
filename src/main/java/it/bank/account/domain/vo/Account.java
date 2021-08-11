@@ -1,5 +1,7 @@
 package it.bank.account.domain.vo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import it.bank.account.domain.enumerator.AccountStatus;
 
 import java.math.BigDecimal;
@@ -10,6 +12,7 @@ public class Account {
     private Long customerNumber;
     private String customerName;
     private BigDecimal balance;
+    @JsonProperty(value = "accountStatus")
     private AccountStatus accountStatus = AccountStatus.OPEN;
 
     public Account() {
@@ -83,6 +86,7 @@ public class Account {
         return customerName;
     }
 
+    @JsonIgnore
     public AccountStatus getStatus(){
         return accountStatus;
     }
