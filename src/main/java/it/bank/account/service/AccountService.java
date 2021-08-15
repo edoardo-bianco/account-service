@@ -1,9 +1,8 @@
-package it.bank.account.domain.service;
+package it.bank.account.service;
 
 import it.bank.account.domain.exception.AccountAlreadyExistsException;
 import it.bank.account.domain.exception.AccountNotFoundException;
 import it.bank.account.domain.vo.Account;
-import it.bank.account.persistence.AccountRepositoryImpl;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;

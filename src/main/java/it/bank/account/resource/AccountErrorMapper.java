@@ -1,4 +1,4 @@
-package it.bank.account.rest;
+package it.bank.account.resource;
 
 import io.quarkus.runtime.util.ExceptionUtil;
 import it.bank.account.domain.exception.AccountAlreadyExistsException;

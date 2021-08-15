@@ -1,7 +1,7 @@
-package it.bank.account.persistence;
+package it.bank.account.repository;
 
 import it.bank.account.domain.vo.Account;
-import it.bank.account.domain.service.AccountRepository;
+import it.bank.account.service.AccountRepository;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;

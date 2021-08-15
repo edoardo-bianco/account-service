@@ -1,4 +1,4 @@
-package it.bank.account.rest;
+package it.bank.account.resource;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

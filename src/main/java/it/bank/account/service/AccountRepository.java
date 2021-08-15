@@ -1,4 +1,4 @@
-package it.bank.account.domain.service;
+package it.bank.account.service;
 
 import it.bank.account.domain.vo.Account;
 
